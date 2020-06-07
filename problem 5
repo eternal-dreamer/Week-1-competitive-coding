@@ -1,0 +1,36 @@
+Given an array of integers arr, a lucky integer is an integer which has a frequency in the array equal to its value.
+
+Return a lucky integer in the array. If there are multiple lucky integers return the largest of them. If there is no lucky integer return -1.
+
+ class Solution {
+    
+public:
+    int max(vector<int>&d)
+    {
+        int m=d[0];
+        for(int i=1;i<d.size();i++)
+        {
+            if(d[i]>m)
+                m=d[i];
+        }
+        return m;
+    }
+    int findLucky(vector<int>& arr) {
+        map<int,int> a;
+        vector<int>d;
+    
+        int t;
+        for(auto n:arr)
+            a[n]++;
+        for(auto it=a.begin();it!=a.end();it++)
+        {
+            if(it->first==it->second)
+                d.push_back(it->first);
+        }
+        if(d.size()!=0)
+            return max(d);
+        else
+           return -1;
+        
+    }
+};
