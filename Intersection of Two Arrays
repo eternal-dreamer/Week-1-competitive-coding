@@ -1,0 +1,13 @@
+class Solution:
+    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        a=set(nums1)
+        b=set(nums2)
+        d=[]
+        for i in a:
+            for c in b:
+                if(i==c):
+                    d.append(i)
+        e=set(d)
+        
+        return sorted(list(e),reverse=True)
+        
