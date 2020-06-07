@@ -1,0 +1,19 @@
+class Solution {
+public:
+    vector<vector<int>> flipAndInvertImage(vector<vector<int>>& A) {
+        vector<vector<int>>m(A.size());
+        
+int c= A[0].size();
+        for (int i =0;i<A.size();i++)m[i].resize(c);
+        for (int i =0;i<A.size();i++)
+        { for (int j=0;j<A[0].size();j++){
+m[i][j]=A[i][c-j-1];
+        if (m[i][j]==1)
+            m[i][j]=0;
+            else
+            m[i][j]=1;}
+        }
+  
+        return m;
+    }
+};
